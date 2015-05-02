@@ -12,7 +12,7 @@
             <a href="/jinanluxi/jsp/index.jsp"><img src="/jinanluxi/image/Logo.gif" alt="济南鲁西兽药有限公司" width="507" height="88" border="0" /></a>
         </div>
         <div class="nav">
-            济南鲁西兽药有限公司 职员版
+            济南鲁西兽药有限公司 后台
         </div>
         <div class="flash"><EMBED height=170 pluginspage=http://www.macromedia.com/go/getflashplayer src=/jinanluxi/image/jnluxi.swf type=application/x-shockwave-flash width=868  quality="high"></EMBED></div>
 

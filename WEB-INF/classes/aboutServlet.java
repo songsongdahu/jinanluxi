@@ -3,7 +3,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
 
-public class loginServlet extends HttpServlet {
+public class aboutServlet extends HttpServlet {
     public void doPost(HttpServletRequest request,
                       HttpServletResponse response)
         throws IOException, ServletException
@@ -15,20 +15,16 @@ public class loginServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8"); 
         PrintWriter out = response.getWriter();
 
-        // 从form中得到数据
-        String user_id = request.getParameter("user_id");
-        String password = request.getParameter("password");
-
-        // 查询数据库得到user_name
-        String user_name = "";
+        // 查询数据库得到text
+        String text = null;
 
         try {
             dbh.connect();
         
-            String sql = "select * from user where user_id='"+user_id+"' and password='"+password+"'";
+            String sql = "select * from article where article_id = 10000001";
             rs = dbh.sqlExecute(sql);
             rs.next();
-            user_name = rs.getString("user_name");
+            text = rs.getString("content");
 
             dbh.close();
         } catch (SQLException e1) {
@@ -39,7 +35,7 @@ public class loginServlet extends HttpServlet {
         }
 
         // 传递user_name,跳转
-        request.setAttribute("user_name", user_name);
-        request.getRequestDispatcher("/jsp/manager/welcome.jsp").forward(request, response);
+        request.setAttribute("text", text);
+        request.getRequestDispatcher("/jsp/manager/about.jsp").forward(request, response);
     }
 }

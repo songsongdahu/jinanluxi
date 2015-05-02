@@ -12,13 +12,13 @@
 	</servlet-mapping>
 
 	<servlet>
-        <servlet-name>hello</servlet-name>
-        <servlet-class>HelloWorld</servlet-class>
+        <servlet-name>aboutServlet</servlet-name>
+        <servlet-class>aboutServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>hello</servlet-name>
-        <url-pattern>/servlet/hello</url-pattern>
+        <servlet-name>aboutServlet</servlet-name>
+        <url-pattern>/jsp/about</url-pattern>
     </servlet-mapping>
 
 	

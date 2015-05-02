@@ -12,13 +12,12 @@
             <a href="/jinanluxi/jsp/index.jsp"><img src="/jinanluxi/image/Logo.gif" alt="济南鲁西兽药有限公司" width="507" height="88" border="0" /></a>
         </div>
         <div class="nav">
-            <a href="/">网站首页</a>|
-            <a href="/">关于鲁西</a>|
+            <a href="/jinanluxi/">网站首页</a>|
+            <a href="/jinanluxi/jsp/about">关于鲁西</a>|
             <a href="/">新闻动态</a>|
             <a href="/">产品展厅</a>|
             <a href="/">技术指南</a>|
-            <a href="/">诚聘英才</a>|
-            <a href="/">联系我们</a>
+            <a href="/">诚聘英才</a>
         </div>
         <div class="flash"><EMBED height=170 pluginspage=http://www.macromedia.com/go/getflashplayer src=/jinanluxi/image/jnluxi.swf type=application/x-shockwave-flash width=868  quality="high"></EMBED></div>
 
