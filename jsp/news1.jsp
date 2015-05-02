@@ -12,13 +12,13 @@
                 <tr height="30">
                     <td>
                         <img src="/jinanluxi/image/arrow3.gif" width="13" height="13">
-                        <a href="/jinanluxi/jsp/about">公司简介</a>
+                        <a href="/jinanluxi/jsp/news1">企业动态</a>
                     </td>
                 </tr>
                 <tr height="30">
                     <td>
                         <img src="/jinanluxi/image/arrow3.gif" width="13" height="13"> 
-                        <a href="/jinanluxi/jsp/connect">联系我们</a>
+                        <a href="/jinanluxi/jsp/connect">公告栏</a>
                     </td>
                 </tr>
             </table>
@@ -32,9 +32,9 @@
                         <img src="/jinanluxi/image/arrow1.gif" width="14" height="11">
                         <a href="/jinanluxi/jsp/index.jsp">首页</a>
                         <img src="/jinanluxi/image/arrow2.gif">
-                        <a href="/jinanluxi/jsp/about">关于鲁西</a>
+                        <a href="/jinanluxi/jsp/news">新闻动态</a>
                         <img src="/jinanluxi/image/arrow2.gif">
-                        <a href="/jinanluxi/jsp/about">公司简介</a>
+                        <a href="/jinanluxi/jsp/news1">企业动态</a>
                     </td>
                 </tr>
                 <tr>

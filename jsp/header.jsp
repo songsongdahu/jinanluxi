@@ -14,7 +14,7 @@
         <div class="nav">
             <a href="/jinanluxi/">网站首页</a>|
             <a href="/jinanluxi/jsp/about">关于鲁西</a>|
-            <a href="/">新闻动态</a>|
+            <a href="/jinanluxi/jsp/news">新闻动态</a>|
             <a href="/">产品展厅</a>|
             <a href="/">技术指南</a>|
             <a href="/">诚聘英才</a>

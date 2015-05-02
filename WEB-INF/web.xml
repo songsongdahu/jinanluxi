@@ -21,6 +21,26 @@
         <url-pattern>/jsp/about</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>connectServlet</servlet-name>
+        <servlet-class>connectServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>connectServlet</servlet-name>
+        <url-pattern>/jsp/connect</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>newsServlet</servlet-name>
+        <servlet-class>newsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>newsServlet</servlet-name>
+        <url-pattern>/jsp/news</url-pattern>
+    </servlet-mapping>
+
 	
     <welcome-file-list>
         <welcome-file>jsp/index.jsp</welcome-file>

@@ -3,7 +3,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
 
-public class aboutServlet extends HttpServlet {
+public class connectServlet extends HttpServlet {
     public void doGet   (HttpServletRequest request,
                       HttpServletResponse response)
         throws IOException, ServletException
@@ -21,7 +21,7 @@ public class aboutServlet extends HttpServlet {
         try {
             dbh.connect();
         
-            String sql = "select * from article where article_id = 10000001";
+            String sql = "select * from article where article_id = 10000002";
             rs = dbh.sqlExecute(sql);
             rs.next();
             text = rs.getString("content");

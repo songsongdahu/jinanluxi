@@ -34,7 +34,7 @@
                         <img src="/jinanluxi/image/arrow2.gif">
                         <a href="/jinanluxi/jsp/about">关于鲁西</a>
                         <img src="/jinanluxi/image/arrow2.gif">
-                        <a href="/jinanluxi/jsp/about">公司简介</a>
+                        <a href="/jinanluxi/jsp/connect">联系我们</a>
                     </td>
                 </tr>
                 <tr>

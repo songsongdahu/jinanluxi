@@ -2,8 +2,9 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
+import java.util.ArrayList;
 
-public class aboutServlet extends HttpServlet {
+public class newsServlet extends HttpServlet {
     public void doGet   (HttpServletRequest request,
                       HttpServletResponse response)
         throws IOException, ServletException
@@ -15,16 +16,19 @@ public class aboutServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8"); 
         PrintWriter out = response.getWriter();
 
-        // 查询数据库得到text
-        String text = null;
+        // 查询数据库得到标题
+        ArrayList<String> title = new ArrayList<String>();
+        ArrayList<String> creation_date = new ArrayList<String>();
 
         try {
             dbh.connect();
         
-            String sql = "select * from article where article_id = 10000001";
+            String sql = "select * from article where article_genre_id = '11' or article_genre_id = '12'";
             rs = dbh.sqlExecute(sql);
-            rs.next();
-            text = rs.getString("content");
+            while(rs.next() == true){
+                title.add(rs.getString("title"));
+                creation_date.add(rs.getString("creation_date"));
+            }
 
             dbh.close();
         } catch (SQLException e1) {
@@ -34,8 +38,9 @@ public class aboutServlet extends HttpServlet {
             out.println("loginServlet ClassNotFoundException");
         }
 
-        // 传递user_name,跳转
-        request.setAttribute("text", text);
+        // 传递参数,跳转
+        request.setAttribute("title", title);
+        request.setAttribute("creation_date", creation_date);
         request.getRequestDispatcher("/jsp/about.jsp").forward(request, response);
     }
 }
