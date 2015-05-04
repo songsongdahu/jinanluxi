@@ -2,7 +2,6 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
-import java.util.ArrayList;
 
 public class newsServlet extends HttpServlet {
     public void doGet   (HttpServletRequest request,
@@ -16,22 +15,23 @@ public class newsServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8"); 
         PrintWriter out = response.getWriter();
 
-        // 查询数据库得到标题
-        ArrayList<String> title = new ArrayList<String>();
-        ArrayList<String> creation_date = new ArrayList<String>();
+        // 查询数据库得到标题和内容
+        String title = "";
+        String content = "";
 
         try {
             dbh.connect();
         
-            String sql = "select * from article where article_genre_id = '11' or article_genre_id = '12'";
+            String sql = "select * from article where article_id = '"+ request.getParameter("article_id") +"'";
+            out.println(sql);
             rs = dbh.sqlExecute(sql);
-            while(rs.next() == true){
-                title.add(rs.getString("title"));
-                creation_date.add(rs.getString("creation_date"));
-            }
+            rs.next();
+            title = rs.getString("title");
+            content = rs.getString("content");
 
             dbh.close();
         } catch (SQLException e1) {
+            out.println(e1.toString());
             out.println("loginServlet SQLException");
             out.println();
         } catch (ClassNotFoundException e2) {
@@ -40,7 +40,7 @@ public class newsServlet extends HttpServlet {
 
         // 传递参数,跳转
         request.setAttribute("title", title);
-        request.setAttribute("creation_date", creation_date);
-        request.getRequestDispatcher("/jsp/about.jsp").forward(request, response);
+        request.setAttribute("content", content);
+        request.getRequestDispatcher("/jsp/news.jsp").forward(request, response);
     }
 }

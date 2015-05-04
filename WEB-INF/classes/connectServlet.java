@@ -36,6 +36,6 @@ public class connectServlet extends HttpServlet {
 
         // 传递user_name,跳转
         request.setAttribute("text", text);
-        request.getRequestDispatcher("/jsp/about.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/connect.jsp").forward(request, response);
     }
 }

@@ -5,7 +5,7 @@ create table article
 article_id varchar(20) not null,
 article_genre_id varchar(20) not null,
 author_id varchar(20) not null,
-tile tinytext not null,
+title tinytext not null,
 content text,
 count int unsigned not null,
 creation_date datetime not null,

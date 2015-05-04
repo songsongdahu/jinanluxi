@@ -32,6 +32,16 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>newslistServlet</servlet-name>
+        <servlet-class>newslistServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>newslistServlet</servlet-name>
+        <url-pattern>/jsp/newslist</url-pattern>
+    </servlet-mapping>
+ 
+    <servlet>
         <servlet-name>newsServlet</servlet-name>
         <servlet-class>newsServlet</servlet-class>
     </servlet>
@@ -40,6 +50,17 @@
         <servlet-name>newsServlet</servlet-name>
         <url-pattern>/jsp/news</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>productlistServlet</servlet-name>
+        <servlet-class>productlistServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>productlistServlet</servlet-name>
+        <url-pattern>/jsp/productlist</url-pattern>
+    </servlet-mapping>
+
 
 	
     <welcome-file-list>
