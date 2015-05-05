@@ -10,37 +10,20 @@
                 <tr>
                     <td><img src="/jinanluxi/image/about_menu_title.gif"></td>
                 </tr>
-
+                <%
+                    ArrayList<String> product_genre_ids = (ArrayList)request.getAttribute("product_genre_ids");
+                    ArrayList<String> product_genre_names = (ArrayList)request.getAttribute("product_genre_names");
+                    for(int i=0;i<product_genre_ids.size();i++){
+                %>
                 <tr height="30">
                     <td>
                         <img src="/jinanluxi/image/arrow3.gif" width="13" height="13">
-                        <a href="/jinanluxi/jsp/productlist?product_genre_id=01">保肝护肾药物</a>
+                        <a href="/jinanluxi/jsp/productlist?product_genre_id=<%= product_genre_ids.get(i) %>"><%= product_genre_names.get(i) %></a>
                     </td>
                 </tr>
-                <tr height="30">
-                    <td>
-                        <img src="/jinanluxi/image/arrow3.gif" width="13" height="13"> 
-                        <a href="/jinanluxi/jsp/productlist?product_genre_id=02">球虫肠炎</a>
-                    </td>
-                </tr>
-                <tr height="30">
-                    <td>
-                        <img src="/jinanluxi/image/arrow3.gif" width="13" height="13"> 
-                        <a href="/jinanluxi/jsp/productlist?product_genre_id=03">腺肌胃炎</a>
-                    </td>
-                </tr>
-                <tr height="30">
-                    <td>
-                        <img src="/jinanluxi/image/arrow3.gif" width="13" height="13"> 
-                        <a href="/jinanluxi/jsp/productlist?product_genre_id=04">大肠杆菌药物</a>
-                    </td>
-                </tr>
-                <tr height="30">
-                    <td>
-                        <img src="/jinanluxi/image/arrow3.gif" width="13" height="13"> 
-                        <a href="/jinanluxi/jsp/productlist?product_genre_id=05">呼吸道药物</a>
-                    </td>
-                </tr>
+                <%
+                    }
+                %>
             </table>
         </td>
             
@@ -53,20 +36,57 @@
                         <a href="/jinanluxi/jsp/index.jsp">首页</a>
                         <img src="/jinanluxi/image/arrow2.gif">
                         <a href="/jinanluxi/jsp/productlist">产品展厅</a>
+                        <%
+                            String product_genre_id = (String)request.getAttribute("product_genre_id");
+                            String product_genre_name = (String)request.getAttribute("product_genre_name");
+                            if(product_genre_id==null){
+                            } else {
+                        %>
+                        <img src="/jinanluxi/image/arrow2.gif">
+                        <a href="/jinanluxi/jsp/productlist?product_genre_id=<%= product_genre_id %>"><%= product_genre_name %></a>
+                        <%
+                            }
+                        %>
                     </td>
                 </tr>
 
                 <% 
                     ArrayList<String> product_id = (ArrayList)request.getAttribute("product_id");
                     ArrayList<String> product_name = (ArrayList)request.getAttribute("product_name");
-                    for(int i=0;i<product_id.size();i++){
+                    ArrayList<String> image = (ArrayList)request.getAttribute("image");
                 %>
-                <tr>
-                    <td><a href="/jinanluxi/jsp/product?product_id=<%= product_id.get(i) %>"><%= product_name.get(i) %></a></td>
-                </tr>
-                <%
-                    }
-                %>
+                <table width='100%' border='0' cellspacing='0' cellpadding='0'>
+                    <%
+                        for(int i=0;i<3;i++){
+                    %>
+                        <tr>
+                        <%
+                            for(int j=0;j<4;j++){
+                                if(i*4+j<product_id.size()){
+                        %>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td><a href="/jinanluxi/jsp/product?product_id=<%= product_id.get(i) %>"><img width="155" height="125" src="/jinanluxi/image/product_image/<%= image.get(i*4+j) %>"></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="/jinanluxi/jsp/product?product_id=<%= product_id.get(i) %>"><%= product_name.get(i*4+j) %></a></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        <%
+                                } else {
+                        %>
+                            <td></td>
+                        <%
+                                }
+                            }
+                        %>
+                        </tr>
+                    <%
+                        }
+                    %>
+                </table>
                 
             </table>
         </td>
