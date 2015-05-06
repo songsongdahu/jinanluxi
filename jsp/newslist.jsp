@@ -6,19 +6,21 @@
 <table width="868" border="0" cellspacing="0" cellpadding="0">
     <tr class="main">
         <td class="left">
-            <table width="186" border="0" cellspacing="0" cellpadding="0">
+            <table align="center" width="186" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td><img src="/jinanluxi/image/about_menu_title.gif"></td>
+                    <td><img src="/jinanluxi/image/title3.gif"></td>
                 </tr>
-
-                <tr height="30">
+                <tr height="25"></tr>
+                <tr class="WebMenu">
                     <td>
+                        &nbsp;&nbsp;
                         <img src="/jinanluxi/image/arrow3.gif" width="13" height="13">
                         <a href="/jinanluxi/jsp/newslist?genre_id=11">企业动态</a>
                     </td>
                 </tr>
-                <tr height="30">
+                <tr class="WebMenu">
                     <td>
+                        &nbsp;&nbsp;
                         <img src="/jinanluxi/image/arrow3.gif" width="13" height="13"> 
                         <a href="/jinanluxi/jsp/newslist?genre_id=12">公告栏</a>
                     </td>
@@ -28,11 +30,11 @@
             
 
         <td class="right">
-            <table width="570" border="0" cellspacing="0" cellpadding="0">
+            <table width="665" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td colspan="2" width="25" height="32" align="center" bgcolor="#F4F4F4">
+                    <td class="Location" colspan="2" width="25" height="32" align="left" bgcolor="#F4F4F4">
                         <img src="/jinanluxi/image/arrow1.gif" width="14" height="11">
-                        <a href="/jinanluxi/jsp/index.jsp">首页</a>
+                        <a href="/jinanluxi/jsp/index">首页</a>
                         <img src="/jinanluxi/image/arrow2.gif">
                         <a href="/jinanluxi/jsp/newslist">新闻动态</a>
                         <% 
@@ -61,13 +63,14 @@
                     ArrayList<String> creation_date = (ArrayList)request.getAttribute("creation_date");
                     for(int i=0;i<title.size();i++){
                 %>
-                <tr>
-                    <td><a href="/jinanluxi/jsp/news?article_id=<%= article_id.get(i) %>"><%= title.get(i) %></a></td>
-                    <td><%= creation_date.get(i).substring(0,10) %></td></tr>
+                <tr height="20"></tr>
+                <tr height="40">
+                    <td width="450" class="ListTitle">&nbsp;&nbsp;&nbsp;&nbsp;<a href="/jinanluxi/jsp/news?article_id=<%= article_id.get(i) %>"><%= title.get(i) %></a></td>
+                    <td width="120" class="ListTitle"><%= creation_date.get(i).substring(0,10) %></td></tr>
                 <%
                     }
                 %>
-                
+                <tr height="40"></tr>
             </table>
         </td>
     </tr>

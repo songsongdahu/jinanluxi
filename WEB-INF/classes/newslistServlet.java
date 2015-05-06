@@ -29,9 +29,9 @@ public class newslistServlet extends HttpServlet {
             String sql;
             
             if(genre_id==null){
-                sql = "select * from article where article_genre_id = '11' or article_genre_id = '12'";
+                sql = "select * from article where article_genre_id = '11' or article_genre_id = '12' order by creation_date desc";
             } else {
-                sql = "select * from article where article_genre_id = '"+ genre_id +"'";
+                sql = "select * from article where article_genre_id = '"+ genre_id +"' order by creation_date desc";
             }
             rs = dbh.sqlExecute(sql);
             while(rs.next() == true){

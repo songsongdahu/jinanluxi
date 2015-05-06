@@ -6,23 +6,26 @@
 <table width="868" border="0" cellspacing="0" cellpadding="0">
     <tr class="main">
         <td class="left">
-            <table width="186" border="0" cellspacing="0" cellpadding="0">
+            <table align="center" width="186" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td><img src="/jinanluxi/image/about_menu_title.gif"></td>
+                    <td><img src="/jinanluxi/image/title4.gif"></td>
                 </tr>
-
-                <tr height="30">
+                <tr height="25"></tr>
+                <%
+                    ArrayList<String> product_genre_ids = (ArrayList)request.getAttribute("product_genre_ids");
+                    ArrayList<String> product_genre_names = (ArrayList)request.getAttribute("product_genre_names");
+                    for(int i=0;i<product_genre_ids.size();i++){
+                %>
+                <tr class="WebMenu">
                     <td>
+                        &nbsp;&nbsp;
                         <img src="/jinanluxi/image/arrow3.gif" width="13" height="13">
-                        <a href="/jinanluxi/jsp/news1">企业动态</a>
+                        <a href="/jinanluxi/jsp/productlist?product_genre_id=<%= product_genre_ids.get(i) %>"><%= product_genre_names.get(i) %></a>
                     </td>
                 </tr>
-                <tr height="30">
-                    <td>
-                        <img src="/jinanluxi/image/arrow3.gif" width="13" height="13"> 
-                        <a href="/jinanluxi/jsp/connect">公告栏</a>
-                    </td>
-                </tr>
+                <%
+                    }
+                %>
             </table>
         </td>
             
@@ -30,19 +33,13 @@
         <td class="right">
             <table width="570" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td colspan="2" width="25" height="32" align="center" bgcolor="#F4F4F4">
-                        <img src="/jinanluxi/image/arrow1.gif" width="14" height="11">
-                        <a href="/jinanluxi/jsp/index.jsp">首页</a>
-                        <img src="/jinanluxi/image/arrow2.gif">
-                        <a href="/jinanluxi/jsp/news">新闻动态</a>
-                        <img src="/jinanluxi/image/arrow2.gif">
-                        <a href="/jinanluxi/jsp/news1">企业动态</a>
-                    </td>
-                </tr>
+                    <table width="90%" border="0" cellspacing="10" cellpadding="10">
+                        <tr>
+                            <td width="70%"><%= request.getAttribute("description") %></td>
+                            <td><img src="/jinanluxi/image/product_image/<%= request.getAttribute("image") %>" height="180" width="129"></td>
+                        </tr>
 
-                <tr>
-                    <td><%= request.getAttribute("description") %></td>
-                    <td><img src="/jinanluxi/image/product_image/<%= request.getAttribute("image") %>"></td>
+                    </table>
                 </tr>
             </table>
         </td>

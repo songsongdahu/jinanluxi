@@ -8,17 +8,19 @@
         <td class="left">
             <table width="186" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td><img src="/jinanluxi/image/about_menu_title.gif"></td>
+                    <td><img src="/jinanluxi/image/title3.gif"></td>
                 </tr>
-
-                <tr height="30">
+                <tr height="25"></tr>
+                <tr class="WebMenu">
                     <td>
+                        &nbsp;&nbsp;
                         <img src="/jinanluxi/image/arrow3.gif" width="13" height="13">
                         <a href="/jinanluxi/jsp/news1">企业动态</a>
                     </td>
                 </tr>
-                <tr height="30">
+                <tr class="WebMenu">
                     <td>
+                        &nbsp;&nbsp;
                         <img src="/jinanluxi/image/arrow3.gif" width="13" height="13"> 
                         <a href="/jinanluxi/jsp/connect">公告栏</a>
                     </td>
@@ -28,22 +30,24 @@
             
 
         <td class="right">
-            <table width="570" border="0" cellspacing="0" cellpadding="0">
+            <table width="665" border="0" cellspacing="0" cellpadding="0">
+                <tr height="20"></tr>
                 <tr>
-                    <td colspan="2" width="25" height="32" align="center" bgcolor="#F4F4F4">
-                        <img src="/jinanluxi/image/arrow1.gif" width="14" height="11">
-                        <a href="/jinanluxi/jsp/index.jsp">首页</a>
-                        <img src="/jinanluxi/image/arrow2.gif">
-                        <a href="/jinanluxi/jsp/news">新闻动态</a>
-                        <img src="/jinanluxi/image/arrow2.gif">
-                        <a href="/jinanluxi/jsp/news1">企业动态</a>
+                    <td align="center">
+                        <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                            <tr><td align="center">
+                                <font style="font-size:16px;line-height:30px;font-weight:bold;color:#ff6600"><%= request.getAttribute("title") %></font>
+                            </td></tr>
+                            <tr><td>
+                                <hr width="100%" size="1" noshade="noshade" color="#dddddd">
+                            </td></tr>
+                            <tr><td colspan="2" style="font-weight:normal;font-size:14px;color:#000000;line-height:25px">
+                                <%= request.getAttribute("content") %>
+                            </td></tr>
+                        </table>
                     </td>
                 </tr>
-
-                <tr>
-                    <td><%= request.getAttribute("title") %></td>
-                    <td><%= request.getAttribute("content") %></td>
-                </tr>
+                <tr height="100"></tr>
             </table>
         </td>
     </tr>
