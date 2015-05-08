@@ -5,7 +5,7 @@ public class DBHelper{
     // 数据库地址，数据库名
     String server = "localhost";
     String dbname = "jinanluxi";
-    String url = "jdbc:mysql://" + server + "/" + dbname + "?useUnicode=true&characterEncoding=EUC_JP";
+    String url = "jdbc:mysql://" + server + "/" + dbname;
     // 数据库用户名
     String user = "root";
     // 数据库密码
